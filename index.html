@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luqman Academy Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academyGreen: '#0f3b2e',
+                        academyGold: '#c5a059',
+                        academyLightGold: '#e6c584',
+                        academyBg: '#fbf9f4'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f4;
+            color: #1a1a1a;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #c5a059 0%, #e6c584 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(15, 59, 46, 0.1), 0 8px 10px -6px rgba(15, 59, 46, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-academyGold selection:text-white">
+
+    <header class="w-full py-10 px-4 bg-academyGreen shadow-lg text-center border-b-4 border-academyGold">
+        <div class="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-2">
+            <div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-wider uppercase text-white">
+                    Luqman <span class="gold-gradient">Academy</span>
+                </h1>
+                <p class="text-academyLightGold text-sm sm:text-base mt-2 tracking-widest uppercase font-medium">
+                    Official Guidelines & Commitments Portal
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8 sm:py-12">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <button onclick="switchTab('policies')" id="btn-policies" 
+                class="p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-academyGreen text-white border-2 border-academyGold transform hover:-translate-y-1">
+                <svg class="w-6 h-6 text-academyGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span>Student Policies & Guidelines</span>
+            </button>
+
+            <button onclick="switchTab('commitments')" id="btn-commitments" 
+                class="p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-white text-academyGreen border-2 border-academyGreen hover:bg-academyGreen/5 transform hover:-translate-y-1">
+                <svg class="w-6 h-6 text-academyGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Our Commitments to Students</span>
+            </button>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-10 card-shadow border border-academyGold/20">
+            
+            <!-- Student Policies -->
+            <div id="content-policies" class="fade-in space-y-6">
+                <div class="border-b border-academyGreen/10 pb-4 mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-academyGreen flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-academyGold inline-block"></span>
+                        Student Policies & Guidelines
+                    </h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Advance Payment:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">All subscription fees and packages must be paid in advance prior to scheduling or starting the classes to ensure continuity.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Cancellation Notice Period:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Any cancellation or request to reschedule a class must be made at least 1 hour before the session starts.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Late Cancellation & No-Show:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">If a cancellation is made less than 1 hour before the session, or in case of a student's no-show, the class will be fully counted (deducted from the package)</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Student Apology & Makeup Classes:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">If a student apologizes for missing a class with prior notice (more than 1 hour), alternative makeup classes can be arranged if the student requests them</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Teacher Absence & Replacement:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">In the rare event that a teacher is absent, the academy guarantees a free makeup class for the student or a qualified substitute teacher to ensure no disruption in the learning plan.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Student Lateness & Teacher Availability:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">If a student is late for a session, the teacher will remain in the virtual classroom throughout the entire duration of the class. This ensures that whenever the student joins—at any time during the session—they will find their teacher waiting and ready to begin.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGold">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Communication & Schedule Changes:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">All scheduling changes, requests, or inquiries must go exclusively through the academy’s management/coordinators, not directly through the teacher.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Commitments to Students -->
+            <div id="content-commitments" class="fade-in space-y-6 hidden">
+                <div class="border-b border-academyGreen/10 pb-4 mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-academyGreen flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-academyGold inline-block"></span>
+                        Our Commitments to Students
+                    </h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Session Reminders:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Proactive reminder notifications sent well in advance before the session, followed by a final reminder 5 minutes prior to ensure smooth class entry and attendance tracking.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Progress Reports:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Providing comprehensive daily reports immediately after each session, alongside monthly analytical reports to closely monitor and track student development.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Achievement Certificates:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Issuing appreciation and achievement certificates to students upon achieving progress</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- 24/7 Support Team:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Providing round-the-clock technical and administrative support to handle schedule coordination, inquiries, requests, and feedback seamlessly.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Expert Tutors & Specialized Curricula:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Supplying structured curricula and highly qualified, experienced teachers specialized in dealing with various age groups using the latest interactive educational tools.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Academic Supervision:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Continuous monitoring and oversight of all classes by experienced senior academic supervisors to ensure the highest standard of education.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-academyBg border-l-4 border-academyGreen">
+                        <h3 class="font-bold text-lg text-academyGreen mb-1">- Flexible Makeup Arrangements:</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">Arranging alternative schedules for classes missed by either the student or the teacher, whenever requested by the student.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full py-6 text-center text-gray-500 text-sm bg-white border-t border-gray-200 mt-12">
+        <p>&copy; 2026 Luqman Academy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            const btnPolicies = document.getElementById('btn-policies');
+            const btnCommitments = document.getElementById('btn-commitments');
+            const contentPolicies = document.getElementById('content-policies');
+            const contentCommitments = document.getElementById('content-commitments');
+
+            if (tab === 'policies') {
+                btnPolicies.className = "p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-academyGreen text-white border-2 border-academyGold transform hover:-translate-y-1";
+                btnCommitments.className = "p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-white text-academyGreen border-2 border-academyGreen hover:bg-academyGreen/5 transform hover:-translate-y-1";
+                
+                contentPolicies.classList.remove('hidden');
+                contentCommitments.classList.add('hidden');
+            } else {
+                btnCommitments.className = "p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-academyGreen text-white border-2 border-academyGold transform hover:-translate-y-1";
+                btnPolicies.className = "p-5 text-lg font-bold rounded-2xl transition-all duration-300 shadow-md flex items-center justify-center space-x-3 bg-white text-academyGreen border-2 border-academyGreen hover:bg-academyGreen/5 transform hover:-translate-y-1";
+                
+                contentCommitments.classList.remove('hidden');
+                contentPolicies.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
